@@ -1,25 +1,23 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
+
 const issueSchema = new mongoose.Schema({
-    //name author label project details
-    title: {
+    Title: {
         type: String,
-        require: true
+        required: true
     },
-    author: {
+    Description: {
         type: String,
-        require: true
+        required: true
     },
-    labels: [{
+    Labels: [{
         type: String,
         trim: true,
-        require: true
+        required: true
     }],
-    description: {
+    Author: {
         type: String,
-        require: true
+        required: true
     }
 }, { timestamps: true })
-
-
 
 module.exports = mongoose.model('Issue', issueSchema);
